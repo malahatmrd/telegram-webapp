@@ -1,6 +1,6 @@
-// src/App.jsx
 import { BrowserRouter, Routes, Route, Navigate } from "react-router-dom";
 import SplashScreenWelcome from "./components/SplashScreen/SplashScreenWelcome.jsx";
+import SplashScreenStart from "./components/SplashScreen/SplashScreenStart.jsx"; 
 
 export default function App() {
   return (
@@ -8,6 +8,8 @@ export default function App() {
       <div className="min-h-screen bg-bg flex flex-col">
         <Routes>
           <Route path="/" element={<SplashScreenWelcome />} />
+
+          <Route path="/splash/start" element={<SplashScreenStart />} />
 
           <Route path="*" element={<Navigate to="/" replace />} />
         </Routes>

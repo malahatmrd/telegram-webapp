@@ -16,8 +16,10 @@ import Vector from "./Vector.svg";
 import Vector1 from "./Vector-1.svg";
 import logo from "./logo.svg"
 import butBack from "./arrow_R.svg"
+import FrameDolar from "./Frame_dolar.svg"
 
 export const assets = {
+  FrameDolar,
   butBack,
   logo,
   back,
