@@ -5,7 +5,7 @@ import { useNavigate } from "react-router-dom";
 export default function SplashScreenWelcome() {
   const navigate = useNavigate(); 
   return (
-    <div className="w-full mx-auto max-w-[420px] min-h-screen bg-white flex flex-col">
+    <div className="-mt-8 w-full mx-auto max-w-[420px] min-h-screen bg-white flex flex-col">
       
       <div className="h-20"></div>
 
