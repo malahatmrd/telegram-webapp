@@ -3,7 +3,7 @@ import { assets } from "../../assets/assets";
 
 export default function SplashScreenStart() {
   return (
-    <div className="-mt-8 w-full mx-auto max-w-[420px] min-h-screen bg-white flex flex-col">
+    <div className="-mt-9 w-full mx-auto max-w-[420px] min-h-screen bg-white flex flex-col">
 
       <div className="h-40 flex items-center px-6">
         <div className="flex items-center gap-3 ">
