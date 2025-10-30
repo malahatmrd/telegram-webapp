@@ -1,21 +1,24 @@
 import React from "react";
 import images, { assets } from "../../assets/assets";
 import { useNavigate } from "react-router-dom";
+import { motion } from "framer-motion";
 
 export default function SplashScreenWelcome() {
-  const navigate = useNavigate(); 
+  const navigate = useNavigate();
+
   return (
-    <div className="-mt-9 w-full mx-auto max-w-[420px] min-h-screen bg-white flex flex-col">
-      
+    <motion.div
+      className="-mt-9 w-full mx-auto max-w-[420px] min-h-screen bg-white flex flex-col"
+      initial={{ x: "100%", opacity: 0 }}   // ورود از راست
+      animate={{ x: 0, opacity: 1 }}        // موقع نمایش
+      exit={{ x: "-100%", opacity: 0 }}     // خروج به چپ
+      transition={{ duration: 0.7, ease: [0.25, 0.1, 0.25, 1] }} // انیمیشن نرم‌تر
+    >
       <div className="h-20"></div>
 
       <div className="flex-1 flex flex-col items-center justify-center px-6">
         <div className="rounded-3xl p-4">
-          <img
-            src={assets.logo}
-            alt="logo"
-            className="w-40 h-40 object-contain"
-          />
+          <img src={assets.logo} alt="logo" className="w-40 h-40 object-contain" />
         </div>
 
         <h1 className="mt-4 text-[30px] font-extrabold text-[#040E1A]">
@@ -31,9 +34,9 @@ export default function SplashScreenWelcome() {
         <button
           type="button"
           className="relative w-full max-w-[340px] mx-auto h-[60px] bg-[#040E1A] text-[#C98D34]
-                 rounded-2xl font-semibold shadow-[0_10px_24px_rgba(0,0,0,.18)]
-                 flex items-center cursor-pointer"
-          onClick={() => navigate("/splash/start")}  
+                     rounded-2xl font-semibold shadow-[0_10px_24px_rgba(0,0,0,.18)]
+                     flex items-center cursor-pointer"
+          onClick={() => navigate("/splash/start")}
         >
           <span className="absolute inset-0 flex items-center justify-center">
             خوش آمدید !
@@ -42,9 +45,7 @@ export default function SplashScreenWelcome() {
             <img src={assets.butBack} alt="arrow" className="w-6 h-6" />
           </span>
         </button>
-        
       </div>
-
-    </div>
+    </motion.div>
   );
 }
