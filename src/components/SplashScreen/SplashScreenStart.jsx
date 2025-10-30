@@ -6,18 +6,19 @@ export default function SplashScreenStart() {
     <div className="-mt-8 w-full mx-auto max-w-[420px] min-h-screen bg-white flex flex-col">
 
       <div className="h-40 flex items-center px-6">
-        <div className="flex items-center gap-3">
-          <div className="w-10 h-10 rounded-[10px] overflow-hidden grid place-items-center bg-black/90">
+        <div className="flex items-center gap-3 ">
+          <div className="w-13 h-13 rounded-[10px] overflow-hidden grid place-items-center bg-black/90">
             <img
               src={assets.logo}
               alt="logo"
-              className="w-7 h-7 object-contain"
+              className="object-contain"
             />
           </div>
-          <div className="leading-4">
-            <div className="text-[17px] font-bold text-[#040E1A]">vam2sot</div>
-            <div className="text-[13px] font-bold text-[#8090A3]">خرید و فروش آسان وام</div>
-          </div>
+          <div className="leading-4 space-y-1.5">
+  <div className="text-[17px] font-bold text-[#040E1A]">vam2sot</div>
+  <div className="text-[13px] font-bold text-[#8090A3]">خرید و فروش آسان وام</div>
+</div>
+
         </div>
       </div>
 
