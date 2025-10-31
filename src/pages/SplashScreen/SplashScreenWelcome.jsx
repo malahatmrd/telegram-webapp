@@ -9,10 +9,10 @@ export default function SplashScreenWelcome() {
   return (
     <motion.div
       className="-mt-9 w-full mx-auto max-w-[420px] min-h-screen bg-white flex flex-col"
-      initial={{ x: "100%", opacity: 0 }}   // ورود از راست
-      animate={{ x: 0, opacity: 1 }}        // موقع نمایش
-      exit={{ x: "-100%", opacity: 0 }}     // خروج به چپ
-      transition={{ duration: 0.7, ease: [0.25, 0.1, 0.25, 1] }} // انیمیشن نرم‌تر
+      initial={{ x: "100%", opacity: 0 }}   
+      animate={{ x: 0, opacity: 1 }}        
+      exit={{ x: "-100%", opacity: 0 }}     
+      transition={{ duration: 0.7, ease: [0.25, 0.1, 0.25, 1] }} 
     >
       <div className="h-20"></div>
 

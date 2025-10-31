@@ -1,10 +1,9 @@
 import React from "react";
 import { BrowserRouter, Routes, Route, Navigate, useLocation } from "react-router-dom";
 import { AnimatePresence } from "framer-motion";
-import SplashScreenWelcome from "./components/SplashScreen/SplashScreenWelcome.jsx";
-import SplashScreenStart from "./components/SplashScreen/SplashScreenStart.jsx";
+import SplashScreenWelcome from "./pages/SplashScreen/SplashScreenWelcome.jsx";
+import SplashScreenStart from "./pages/SplashScreen/SplashScreenStart.jsx";
 
-// یک کامپوننت داخلی برای پشتیبانی از AnimatePresence
 function AnimatedRoutes() {
   const location = useLocation();
 
