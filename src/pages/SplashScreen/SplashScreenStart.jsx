@@ -43,7 +43,7 @@ export default function SplashScreenStart() {
         <button
           type="button"
           onClick={() => setShowSignup(true)}
-          className="relative w-full max-w-[340px] mx-auto h-[60px] bg-[#0C1C2E]
+          className="relative w-full max-w-[340px] mx-auto h-[60px] bg-[#040E1A]
                      rounded-2xl font-semibold shadow-[0_10px_24px_rgba(0,0,0,.18)]
                      flex items-center cursor-pointer"
         >

@@ -17,6 +17,8 @@ import Vector1 from "./Vector-1.svg";
 import logo from "./logo.svg"
 import butBack from "./arrow_R.svg"
 import FrameDolar from "./Frame_dolar.svg"
+import Group from "./Group.svg"
+
 
 export const assets = {
   FrameDolar,
@@ -38,6 +40,7 @@ export const assets = {
   Time_Watch,
   Vector,
   Vector1,
+  Group
 };
 
 export default assets;
