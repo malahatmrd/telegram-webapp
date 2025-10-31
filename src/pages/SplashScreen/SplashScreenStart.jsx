@@ -2,14 +2,21 @@ import React, { useState } from "react";
 import { AnimatePresence } from "framer-motion";
 import { assets } from "../../assets/assets";
 import SignUp from "../../pages/Auth/SignUp";
+import OtpVerify from "../../pages/Auth/OtpVerify";
 
 export default function SplashScreenStart() {
   const [showSignup, setShowSignup] = useState(false);
+  const [showOtp, setShowOtp] = useState(false);
+
+  const handleNextToOtp = () => {
+    setShowSignup(false);
+    setTimeout(() => setShowOtp(true), 450);
+  };
 
   return (
     <div className="-mt-9 w-full mx-auto max-w-[420px] min-h-screen bg-white flex flex-col relative overflow-hidden">
       <div className="h-40 flex items-center px-6">
-        <div className="flex items-center gap-3 ">
+        <div className="flex items-center gap-3">
           <div className="w-13 h-13 rounded-[10px] overflow-hidden grid place-items-center bg-black/90">
             <img src={assets.logo} alt="logo" className="object-contain" />
           </div>
@@ -57,7 +64,17 @@ export default function SplashScreenStart() {
       </div>
 
       <AnimatePresence>
-        {showSignup && <SignUp key="signup" onClose={() => setShowSignup(false)} />}
+        {showSignup && (
+          <SignUp
+            key="signup"
+            onClose={() => setShowSignup(false)}
+            onNext={handleNextToOtp}
+          />
+        )}
+      </AnimatePresence>
+
+      <AnimatePresence>
+        {showOtp && <OtpVerify key="otp" onClose={() => setShowOtp(false)} />}
       </AnimatePresence>
     </div>
   );
