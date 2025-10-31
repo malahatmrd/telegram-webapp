@@ -1,4 +1,5 @@
 import React, { useState } from "react";
+import { AnimatePresence } from "framer-motion";
 import { assets } from "../../assets/assets";
 import SignUp from "../../pages/Auth/SignUp";
 
@@ -43,8 +44,8 @@ export default function SplashScreenStart() {
           type="button"
           onClick={() => setShowSignup(true)}
           className="relative w-full max-w-[340px] mx-auto h-[60px] bg-[#0C1C2E]
-                 rounded-2xl font-semibold shadow-[0_10px_24px_rgba(0,0,0,.18)]
-                 flex items-center cursor-pointer"
+                     rounded-2xl font-semibold shadow-[0_10px_24px_rgba(0,0,0,.18)]
+                     flex items-center cursor-pointer"
         >
           <span className="absolute text-[#C98D34] inset-0 flex items-center justify-center">
             شروع!
@@ -55,7 +56,9 @@ export default function SplashScreenStart() {
         </button>
       </div>
 
-      {showSignup && <SignUp onClose={() => setShowSignup(false)} />}
+      <AnimatePresence>
+        {showSignup && <SignUp key="signup" onClose={() => setShowSignup(false)} />}
+      </AnimatePresence>
     </div>
   );
 }
