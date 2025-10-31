@@ -1,24 +1,23 @@
-import React from "react";
+import React, { useState } from "react";
 import { assets } from "../../assets/assets";
+import SignUp from "../../pages/Auth/SignUp";
 
 export default function SplashScreenStart() {
-  return (
-    <div className="-mt-9 w-full mx-auto max-w-[420px] min-h-screen bg-white flex flex-col">
+  const [showSignup, setShowSignup] = useState(false);
 
+  return (
+    <div className="-mt-9 w-full mx-auto max-w-[420px] min-h-screen bg-white flex flex-col relative overflow-hidden">
       <div className="h-40 flex items-center px-6">
         <div className="flex items-center gap-3 ">
           <div className="w-13 h-13 rounded-[10px] overflow-hidden grid place-items-center bg-black/90">
-            <img
-              src={assets.logo}
-              alt="logo"
-              className="object-contain"
-            />
+            <img src={assets.logo} alt="logo" className="object-contain" />
           </div>
           <div className="leading-4 space-y-1.5">
-  <div className="text-[17px] font-bold text-[#040E1A]">vam2sot</div>
-  <div className="text-[13px] font-bold text-[#8090A3]">خرید و فروش آسان وام</div>
-</div>
-
+            <div className="text-[17px] font-bold text-[#040E1A]">vam2sot</div>
+            <div className="text-[13px] font-bold text-[#8090A3]">
+              خرید و فروش آسان وام
+            </div>
+          </div>
         </div>
       </div>
 
@@ -37,15 +36,12 @@ export default function SplashScreenStart() {
             </p>
           </h1>
         </div>
-
-
-
-
       </div>
 
       <div className="w-full px-6 pb-8">
         <button
           type="button"
+          onClick={() => setShowSignup(true)}
           className="relative w-full max-w-[340px] mx-auto h-[60px] bg-[#0C1C2E]
                  rounded-2xl font-semibold shadow-[0_10px_24px_rgba(0,0,0,.18)]
                  flex items-center cursor-pointer"
@@ -59,6 +55,7 @@ export default function SplashScreenStart() {
         </button>
       </div>
 
+      {showSignup && <SignUp onClose={() => setShowSignup(false)} />}
     </div>
   );
 }
