@@ -16,25 +16,31 @@ export default function ModalGate() {
     setStep("choose");
   };
 
+  const [modalKey, setModalKey] = useState(Date.now());
+
+  React.useEffect(() => {
+    setModalKey(Date.now());
+  }, [modal, step]);
+
   if (modal === "choose-user") {
     if (step === "choose")
       return (
         <ChooseUserTypeModal
+          key={modalKey}
           onSelect={(type) => {
             if (type === "referral") setStep("referral");
-            else if (type === "chooseEmployee") {
-              navigate("/suggested-employees");
-            } else closeModal();
+            else if (type === "chooseEmployee") navigate("/suggested-employees");
+            else closeModal();
           }}
         />
       );
 
     if (step === "referral")
-      return <ReferralCodeModal onClose={closeModal} />;
+      return <ReferralCodeModal key={modalKey} onClose={closeModal} />;
 
     if (step === "suggestedList")
       return (
-        <div className="fixed inset-0 z-50 bg-white">
+        <div className="fixed inset-0 z-50 bg-white" key={modalKey}>
           <SuggestedEmployeesPage
             onClose={closeModal}
             onSelectEmployee={(name) => {

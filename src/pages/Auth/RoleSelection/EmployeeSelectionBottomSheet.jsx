@@ -5,7 +5,7 @@ import { SuccessBottomSheet } from "./SuccessBottomSheet";
 
 export const EmployeeSelectionBottomSheet = ({ employee, onClose }) => {
   const [isOpen, setIsOpen] = useState(true);
-  const [afterExit, setAfterExit] = useState("none"); 
+  const [afterExit, setAfterExit] = useState("none");
   const [showSuccess, setShowSuccess] = useState(false);
 
   const closeWithAnimation = (next = "close") => {
@@ -53,6 +53,11 @@ export const EmployeeSelectionBottomSheet = ({ employee, onClose }) => {
           } else if (afterExit === "close") {
             onClose?.();
             setAfterExit("none");
+
+            setTimeout(() => {
+              setIsOpen(true);
+              setShowSuccess(false);
+            }, 100);
           }
         }}
       >
@@ -73,11 +78,9 @@ export const EmployeeSelectionBottomSheet = ({ employee, onClose }) => {
 
             <motion.div
               variants={sheetVariants}
-              className="
-                relative z-10 bg-white w-full max-w-lg
-                rounded-t-[40px] pt-[50px] pb-8 px-6  
-                shadow-[0_-8px_32px_rgba(0,0,0,0.25)]
-              "
+              className="relative z-10 bg-white w-full max-w-lg
+                         rounded-t-[40px] pt-[50px] pb-8 px-6  
+                         shadow-[0_-8px_32px_rgba(0,0,0,0.25)]"
               onClick={(e) => e.stopPropagation()}
             >
               <div className="absolute -top-[430px] left-1/2 -translate-x-1/2 pointer-events-none">
