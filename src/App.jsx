@@ -4,16 +4,22 @@ import { AnimatePresence } from "framer-motion";
 import SplashScreenWelcome from "./pages/SplashScreen/SplashScreenWelcome.jsx";
 import SplashScreenStart from "./pages/SplashScreen/SplashScreenStart.jsx";
 import ModalGate from "./components/ModalGate.jsx";
-import { SuggestedEmployeesPage } from "./pages/Auth/RoleSelection/SuggestedEmployeesPage";
+import { SuggestedEmployeesPage } from "./pages/Auth/RoleSelection/SuggestedEmployeesPage.jsx";
+import AuthPage from "./pages/Auth/AuthPage.jsx"; 
 
 function AnimatedRoutes() {
   const location = useLocation();
+
   return (
     <AnimatePresence mode="wait">
       <Routes location={location} key={location.pathname}>
         <Route path="/" element={<SplashScreenWelcome />} />
         <Route path="/splash/start" element={<SplashScreenStart />} />
+
+        <Route path="/auth" element={<AuthPage />} />
+
         <Route path="/suggested-employees" element={<SuggestedEmployeesPage />} />
+
         <Route path="*" element={<Navigate to="/" replace />} />
       </Routes>
     </AnimatePresence>
@@ -25,7 +31,7 @@ export default function App() {
     <BrowserRouter>
       <div className="min-h-screen bg-bg flex flex-col overflow-hidden">
         <AnimatedRoutes />
-        <ModalGate />
+        <ModalGate /> 
       </div>
     </BrowserRouter>
   );

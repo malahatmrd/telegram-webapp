@@ -24,8 +24,7 @@ export default function ModalGate() {
             if (type === "referral") setStep("referral");
             else if (type === "chooseEmployee") {
               navigate("/suggested-employees");
-            }
-            else closeModal();
+            } else closeModal();
           }}
         />
       );
@@ -36,7 +35,7 @@ export default function ModalGate() {
     if (step === "suggestedList")
       return (
         <div className="fixed inset-0 z-50 bg-white">
-          <SuggestedEmployeesPage 
+          <SuggestedEmployeesPage
             onClose={closeModal}
             onSelectEmployee={(name) => {
               console.log("کارمند انتخاب شده:", name);
