@@ -11,25 +11,29 @@ import react from "./react.svg";
 import Rectangle20 from "./Rectangle 20.svg";
 import star from "./star.svg";
 import star_1 from "./star_1.svg";
-
 import full_star from "./full_star.svg";
 import empty_star from "./empty_star.svg";
-
 import Time_Watch from "./Time_Watch.svg";
 import Vector from "./Vector.svg";
 import Vector1 from "./Vector-1.svg";
-import logo from "./logo.svg"
-import butBack from "./arrow_R.svg"
-import FrameDolar from "./Frame_dolar.svg"
-import Face_Id from "./Face_Id.svg"
-import Frame_rol from "./Frame_rol.svg"
-import Two from "./Two.svg"
-import run_man from "./run_man.svg"
-import black_Lists from "./black_Lists.svg"
-import check from "./check.svg"
+import logo from "./logo.svg";
+import butBack from "./arrow_R.svg";
+import FrameDolar from "./Frame_dolar.svg";
 
+// 🔹 از تغییرات تو (HEAD)
+import Face_Id from "./Face_Id.svg";
+import Frame_rol from "./Frame_rol.svg";
+import Two from "./Two.svg";
+import run_man from "./run_man.svg";
+import black_Lists from "./black_Lists.svg";
+import check from "./check.svg";
+
+// 🔹 از تغییرات ریموت (GitHub)
+import Group from "./Group.svg";
+import Letter from "./Letter.svg";
 
 export const assets = {
+  // جدیدها
   empty_star,
   full_star,
   check,
@@ -57,6 +61,8 @@ export const assets = {
   Time_Watch,
   Vector,
   Vector1,
+  Group,
+  Letter,
 };
 
 export default assets;
